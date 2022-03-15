@@ -37,10 +37,9 @@ output_A_datasets = [dataiku.Dataset(name) for name in output_A_names]
 
 # The configuration is simply a map of parameters, and retrieving the value of one of them is simply:
 my_variable = get_recipe_config()['parameter2']
-x = -1
 
 if my_variable < 45:
-  raise Exception("Sorry, no numbers below 45")
+  raise Exception("Sorry, parameter2 is below 45")
 
 # For optional parameters, you should provide a default value in case the parameter is not present:
 my_variable = get_recipe_config().get('parameter_name', None)
